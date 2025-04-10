@@ -1,0 +1,12 @@
+# cargo-make で実行するコマンド全体に共通で設定する環境変数
+[env]
+GLOBAL = "global env"
+
+# extend
+[tasks.set-env-local.env]
+LOCAL = "local env"
+
+[tasks.run]
+extend = "set-env-local"
+command = "cargo"
+args = ["run"]
